@@ -521,20 +521,6 @@ spec:
           persistentVolumeClaim:
             claimName: $PVC_NAME
 
-      initContainers:
-        - name: fix-output-permissions
-          image: busybox:1.36
-          imagePullPolicy: IfNotPresent
-          securityContext:
-            runAsUser: 0
-          command:
-            - sh
-            - -c
-            - chown -R 1001:1001 /output && chmod 775 /output
-          volumeMounts:
-            - name: output
-              mountPath: /output
-
       containers:
         - name: must-gather
           image: "$IMAGE"
