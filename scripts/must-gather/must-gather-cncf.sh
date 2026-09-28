@@ -263,7 +263,7 @@ k get namespace "$NAMESPACE" >/dev/null 2>&1 || \
 # =============================================================================
 # RBAC BOOTSTRAP
 # =============================================================================
-# The script is self-contained for CNCF Kubernetes / Rancher.
+# The script is self-contained for CNCF Kubernetes.
 # kubectl apply is idempotent, so the SA/ClusterRole/Binding can be applied
 # on every invocation. The caller must have permission to manage these RBAC
 # resources.
